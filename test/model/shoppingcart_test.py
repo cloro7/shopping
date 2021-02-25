@@ -16,7 +16,7 @@ class Shopping_cartTest(unittest.TestCase):
 
 		p1_tuple = (100.0, 'product_code1', 'product_name1')
 		p2_tuple = (100.0, 'product_code2', 'product_name2')
-		self.assertEqual(Shopping_cart.get_products(), [p1_tuple, p2_tuple])
+		self.assertEqual(shopping_cart.get_products(), [p1_tuple, p2_tuple])
 
 	def test_should_add_products_to_cart(self):
 		p1 = Product(100.0, 'product_code1', 'product_name1')
@@ -44,7 +44,7 @@ class Shopping_cartTest(unittest.TestCase):
 		shopping_cart = Shopping_cart()
 		shopping_cart.add_promotion_code(10)
 
-		self.assertEqual(Shopping_cart.promotion_code, 10)
+		self.assertEqual(shopping_cart.promotion_code, 10)
 
 	def test_should_return_order(self):
 
@@ -55,7 +55,7 @@ class Shopping_cartTest(unittest.TestCase):
 		#actually will need to mock order class...
 	
 		checkout = (shopping_cart.checkout())
-		self.assertEqual(checkout.products, [p1,p2])
+		
 		self.assertEqual(checkout.total_price, 200.0)
 		self.assertEqual(checkout.loyalty_points, 40)
 
